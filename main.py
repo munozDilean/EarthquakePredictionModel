@@ -1,6 +1,5 @@
 import torch.nn as nn
 
-# TODO: Download data to repo
 # TODO: Setup Dataset for model
 #   - Training Data
 #   - Validation Data
