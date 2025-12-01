@@ -7,6 +7,8 @@ from torch.utils.data import DataLoader
 # check available device
 if torch.cuda.is_available():
     device = torch.device("cuda")
+elif torch.backends.mps.is_available():
+    device = "mps"  # Apple GPU
 else:
     device = torch.device("cpu")
 print(f"Current device: {device}")
