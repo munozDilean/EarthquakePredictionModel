@@ -7,14 +7,13 @@ import numpy as np
 
 # cvs formatted dataset class
 class earthQuakeData(Dataset):
-    def __init__(self, file_path, feature_columns, target_column):
+    def __init__(self, data_frame, feature_columns, target_column):
         """
         * file_path (string): a path to csv file
         * feature_columns (string): column name(s) in the csv file to include as feature(s) in this dataset
         * target_column (string): a column name that will be used as the label(ground truth) in this dataset
         """
         # reading csv with pandas: https://www.w3schools.com/python/pandas/ref_df_iloc.asp
-        data_frame = pd.read_csv(file_path)
         self.X = data_frame[feature_columns].values.astype(np.float32)
 
         # print out how current features in this dataset looks
